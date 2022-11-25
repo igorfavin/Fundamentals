@@ -1,6 +1,5 @@
 #include <locale.h>
 #include <iostream>
-#include <list>
 
 
 using namespace std;
@@ -25,28 +24,28 @@ int main()
     }
     if (angulo == 0 || angulo == 90 || angulo == 180 || angulo == 270 || angulo == 360 || angulo == -90 || angulo == -180 || angulo == -270 || angulo == -360)
     {
-        printf("Está encima de algum dos eixos.");
+        printf("EstÃ¡ encima de algum dos eixos.");
     }
     if ((angulo > 0 && angulo < 90) || (angulo < -270 && angulo > -360))
     {
-        printf("1º Quadrante");
+        printf("1Âº Quadrante");
     } else if ((angulo > 90 && angulo < 180) || (angulo < -180 && angulo > -270))
     {
-        printf("2º Quadrante");
+        printf("2Âº Quadrante");
     } else if ((angulo > 180 && angulo < 270) || (angulo < -90 && angulo > -180))
     {
-        printf("3º Quadrante");
+        printf("3Âº Quadrante");
     }else if ((angulo > 270 && angulo < 360) || (angulo < 0 && angulo > -90))
     {
-        printf("4º Quadrante");
+        printf("4Âº Quadrante");
     }
     printf(" %d volta(s) no sentido ", voltas);
     if (angulo < 0)
     {
-        printf("horário");
+        printf("horÃ¡rio");
     } else
     {
-        printf("anti-horário");
+        printf("anti-horÃ¡rio");
     }
 
     return 0;
