@@ -1,6 +1,5 @@
 #include <locale.h>
 #include <iostream>
-#include <list>
 
 
 using namespace std;
@@ -35,7 +34,7 @@ int main()
     peso2 = leNumero();
     peso3 = leNumero();
 
-    printf("A média ponderada é igual a: %5.2f", retornaMedia(nota1,nota2,nota3,peso1,peso2,peso3));
+    printf("A mÃ©dia ponderada Ã© igual a: %5.2f", retornaMedia(nota1,nota2,nota3,peso1,peso2,peso3));
 
     return 0;
 }
