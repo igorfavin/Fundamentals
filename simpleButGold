@@ -1,0 +1,19 @@
+#include <locale.h>
+#include <iostream>
+
+void mostraVetor(int arr[])
+{
+    for(unsigned int i = sizeof(*arr); i != -1 ;i--)
+    {
+        printf("%i", arr[i]);
+    }
+}
+
+int main()
+{
+    int arr[5] = {0,1,2,3,4};
+    mostraVetor(arr);
+    return 0;
+}
+
+/* the interesting thing about this simple code is the way I used unsigned to print an arr backwards on the screen, when using != -1 which is a value that will never exist when using unsigned, it can run without problem until the last (first ) array index because there will never be a negative value.*/
