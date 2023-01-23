@@ -38,7 +38,7 @@ int main()
             printf("Details account are:\n");
             while((fread(&customer_info, sizeof(cliente),1 , arquivo_leitura))==1)
             {
-                printf("\n\nAccount Number: %d\nName: %s\nBalance Account: %.2f\n\n", customer_info.cod_identify, customer_info.nome, customer_info.saldo);
+                printf("\n\nAccount Number: %03d\nName: %s\nBalance Account: %.2f\n\n", customer_info.cod_identify, customer_info.nome, customer_info.saldo);
             }
             
             rewind(arquivo_leitura);
@@ -46,15 +46,17 @@ int main()
 
             while((fread(&customer_info, sizeof(cliente), 1, arquivo_leitura)))
             {
-                printf("\n\nAccount Number: %d\nNome: %s\nBalance Account: %.2f\n\n", customer_info.cod_identify, customer_info.nome, customer_info.saldo);
+                printf("\n\nAccount Number: %03d\nNome: %s\nBalance Account: %.2f\n\n", customer_info.cod_identify, customer_info.nome, customer_info.saldo);
             }
             printf("Testando o fseek\n");
             fseek(arquivo_leitura, 0 , SEEK_SET);
             while((fread(&customer_info, sizeof(cliente), 1, arquivo_leitura)))
             {
-                printf("\n\nAccount Number: %d\nNome: %s\nBalance Account: %.2f\n\n", customer_info.cod_identify, customer_info.nome, customer_info.saldo);
-            }            
+                printf("\n\nAccount Number: %03d\nNome: %s\nBalance Account: %.2f\n\n", customer_info.cod_identify, customer_info.nome, customer_info.saldo);
+            }
             fclose(arquivo_leitura);
+            rename("Customer.dat", "Database.dat");
+            remove("Database.dat");
         }
     }
     else{
