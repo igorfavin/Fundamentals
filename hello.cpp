@@ -40,6 +40,20 @@ int main()
             {
                 printf("\n\nAccount Number: %d\nName: %s\nBalance Account: %.2f\n\n", customer_info.cod_identify, customer_info.nome, customer_info.saldo);
             }
+            
+            rewind(arquivo_leitura);
+            printf("\nCursor resetado ao começo do arquivo!\n");
+
+            while((fread(&customer_info, sizeof(cliente), 1, arquivo_leitura)))
+            {
+                printf("\n\nAccount Number: %d\nNome: %s\nBalance Account: %.2f\n\n", customer_info.cod_identify, customer_info.nome, customer_info.saldo);
+            }
+            printf("Testando o fseek\n");
+            fseek(arquivo_leitura, 0 , SEEK_SET);
+            while((fread(&customer_info, sizeof(cliente), 1, arquivo_leitura)))
+            {
+                printf("\n\nAccount Number: %d\nNome: %s\nBalance Account: %.2f\n\n", customer_info.cod_identify, customer_info.nome, customer_info.saldo);
+            }            
             fclose(arquivo_leitura);
         }
     }
